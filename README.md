@@ -1,4 +1,6 @@
-# smarthomeconnector.js
+# SmartHomeConnector.js
+
+[![CircleCI](https://circleci.com/gh/ph168/smarthomeconnector.js.svg?style=svg)](https://circleci.com/gh/ph168/smarthomeconnector.js)
 
 ## License
 
