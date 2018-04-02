@@ -1,6 +1,1 @@
-export default class SmartHomeConnector {
-
-  constructor() {
-    // TODO
-  }
-}
+export default class SmartHomeConnector {}

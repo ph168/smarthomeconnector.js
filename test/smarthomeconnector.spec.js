@@ -1,8 +1,7 @@
-import SmartHomeConnector from '../src/index'
+import SmartHomeConnector from "../src/index";
 
-describe('SmartHomeConnector', () => {
-
-  it('should be available', () => {
+describe("SmartHomeConnector", () => {
+  it("should be available", () => {
     const shc = new SmartHomeConnector();
     expect(shc).toBeTruthy();
   });
