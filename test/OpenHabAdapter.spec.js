@@ -66,15 +66,13 @@ describe("OpenHabAdapter", () => {
     });
   });
 
-  /*
   it("Should return promised categories'", () => {
-    const cats = adapter.getCategories();
-    cats.then(categories => {
+    expect.assertions(2);
+    return adapter.getCategories().then(categories => {
       expect(categories.length).toBe(9);
       expect(
         categories.find(cat => cat === "Dimmbare Lampe (weiß)")
       ).toBeDefined();
     });
   });
-  */
 });
