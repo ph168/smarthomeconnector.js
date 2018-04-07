@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 import BaseAdapter from "../../BaseAdapter";
 import OpenHabApiClient from "./OpenHabApiClient";
-import OpenHabMockService from "../../../test/OpenHabMockService";
 import { ShcComponent, ShcService, ShcState } from "../../ShcTypes";
 
 export default class OpenHabAdapter extends BaseAdapter {
