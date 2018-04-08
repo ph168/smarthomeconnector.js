@@ -41,5 +41,11 @@
   },
   "dependencies": {
     "axios": "^0.18.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "OpenHabLocalRestClient.spec.js"
+    ]
   }
 }
