@@ -31,7 +31,7 @@ export default class OpenHabApiClient {
   }
 
   async getThingByUid(uid) {
-    return get(this.host.concat("/things").concat(uid));
+    return get(this.host.concat("/things/").concat(uid));
   }
 
   async updateThing(uid) {
@@ -53,7 +53,7 @@ export default class OpenHabApiClient {
       this.host
         .concat("/things/")
         .concat(uid)
-        .concat("/config")
+        .concat("/config/status")
     );
   }
 
@@ -94,10 +94,7 @@ export default class OpenHabApiClient {
   }
 
   async sendCommandToItem(name, command) {
-    return put(
-      this.host.concat("/items/").concat(name),
-      JSON.stringify(command)
-    );
+    return post(this.host.concat("/items/").concat(name), command);
   }
 
   async getItemState(name) {
@@ -115,7 +112,7 @@ export default class OpenHabApiClient {
         .concat("/items/")
         .concat(name)
         .concat("/state"),
-      JSON.stringify(state)
+      state
     );
   }
 
@@ -124,7 +121,7 @@ export default class OpenHabApiClient {
   }
 
   async getBindingConfig(bindingID) {
-    return this.get(
+    return get(
       this.host.concat("/bindings/".concat(bindingID).concat("/config"))
     );
   }
