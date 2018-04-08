@@ -1,38 +1,20 @@
 /* eslint-disable no-unused-vars */
+const axios = require("axios");
+
 function get(url) {
-  return fetch(url).then(response => {
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-    return response.json();
-  });
+  return axios.get(url).then(response => response.data);
 }
 
 function post(url, json) {
-  return fetch(url, { method: "post" }, json).then(response => {
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-    return response.json();
-  });
+  return axios.post(url, json);
 }
 
 function put(url, json) {
-  return fetch(url, { method: "put" }, json).then(response => {
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-    return response.json();
-  });
+  return axios.put(url, json);
 }
 
 function apiDelete(url) {
-  return fetch(url, { method: "delete" }).then(response => {
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-    return response.json();
-  });
+  return axios.delete(url);
 }
 
 export default class OpenHabApiClient {
@@ -85,41 +67,41 @@ export default class OpenHabApiClient {
   }
 
   async deleteThing(uid) {
-    return this.apiDelete(this.host.concat("/things/").concat(uid));
+    return apiDelete(this.host.concat("/things/").concat(uid));
   }
 
   async getThingTypes() {
-    return this.get(this.host.concat("/thing-types"));
+    return get(this.host.concat("/thing-types"));
   }
 
   async getThingType(uid) {
-    return this.get(this.host.concat("/thing-types/").concat(uid));
+    return get(this.host.concat("/thing-types/").concat(uid));
   }
 
   async getItems() {
-    return this.get(this.host.concat("/items/"));
+    return get(this.host.concat("/items/"));
   }
 
   async getItem(name) {
-    return this.get(this.host.concat("/items/").concat(name));
+    return axios.get(this.host.concat("/items/").concat(name));
   }
 
   async createOrUpdateItem(item) {
-    return this.put(
+    return put(
       this.host.concat("/items/".concat(item.name)),
       JSON.stringify(item)
     );
   }
 
   async sendCommandToItem(name, command) {
-    return this.put(
+    return put(
       this.host.concat("/items/").concat(name),
       JSON.stringify(command)
     );
   }
 
   async getItemState(name) {
-    return this.get(
+    return get(
       this.host
         .concat("/items/")
         .concat(name)
@@ -128,7 +110,7 @@ export default class OpenHabApiClient {
   }
 
   async updateItemState(name, state) {
-    return this.put(
+    return put(
       this.host
         .concat("/items/")
         .concat(name)
@@ -138,7 +120,7 @@ export default class OpenHabApiClient {
   }
 
   async getBindings() {
-    return this.get(this.host.concat("/bindindgs"));
+    return get(this.host.concat("/bindindgs"));
   }
 
   async getBindingConfig(bindingID) {
@@ -148,7 +130,7 @@ export default class OpenHabApiClient {
   }
 
   async updateBindingConfig(bindingID, config) {
-    return this.put(
+    return put(
       this.host
         .concat("/bindings/")
         .concat(bindingID)
