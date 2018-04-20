@@ -7,6 +7,42 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 ![License](https://img.shields.io/github/license/ph168/smarthomeconnector.js.svg)
 
+## About
+
+SmartHomeConnector.js is a JavaScript library for connecting web applications to home automation systems. It abolishes the need to learn the speficifcs of each supported system by providing a uniform API on top.
+The library currently supports the following features;
+* ...
+
+Currently supporting;
+* [openHAB](https://www.openhab.org/)
+
+## Installation
+
+If you want to use SmartHomeConnector fo through the following steps (npm needed);
+* Download/Clone this repo
+* Install build-dependencies
+```bash
+npm install
+```
+* Build JavaScript-File
+```bash
+npm run build
+```
+* Use smarthomeconnector.js (found in dist-directory)
+```html
+<script
+  type="text/javascript"
+  src="smarthomeconnector.js" />
+</script>
+```
+
+## Usage
+* ...
+
+## Questions, suggestions & feature requests
+
+[File an issue](https://github.com/ph168/smarthomeconnector.js/issues)!
+
 ## License
 
 MIT License—see the LICENSE file for details
