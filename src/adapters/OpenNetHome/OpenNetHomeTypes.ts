@@ -4,5 +4,15 @@ export interface Item {
   category: string;
   className: string;
   actions?: string[];
-  attributes?: any[];
+  attributes?: Attribute[];
+}
+
+export interface Attribute {
+  name: string;
+  value: string;
+  unit?: string;
+  type?: string;
+  valueList?: string[];
+  readOnly?: boolean;
+  canInit?: boolean;
 }
