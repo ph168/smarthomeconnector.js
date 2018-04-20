@@ -30,10 +30,7 @@ npm run build
 ```
 * Use smarthomeconnector.js (found in dist-directory)
 ```html
-<script
-  type="text/javascript"
-  src="smarthomeconnector.js" />
-</script>
+<script type="text/javascript" src="smarthomeconnector.js"></script>
 ```
 
 ## Usage
