@@ -17,36 +17,33 @@ function apiDelete(url) {
   return axios.delete(url);
 }
 
-export default class OpenHabApiClient {
+export default class OpenNetHomeApiClient {
   constructor(host) {
     this.host = host.concat("/rest");
   }
 
   async getItems() {
-    return this.get(this.host.concat("/items"));
+    return get(this.host.concat("/items"));
   }
 
   async getItem(id) {
-    return this.get(this.host.concat("/items/").concat(id));
+    return get(this.host.concat("/items/").concat(id));
   }
 
   async updateItem(id, item) {
-    return this.put(
-      this.host.concat("/items/").concat(id),
-      JSON.stringify(item)
-    );
+    return put(this.host.concat("/items/").concat(id), JSON.stringify(item));
   }
 
   async createItem(item) {
-    return this.post(this.host.concat("/items"), JSON.stringify(item));
+    return post(this.host.concat("/items"), JSON.stringify(item));
   }
 
   async deleteItem(id) {
-    return this.apiDelete(this.host.concat("/items/").concat(id));
+    return apiDelete(this.host.concat("/items/").concat(id));
   }
 
   async invokeAction(id, action) {
-    return this.post(
+    return post(
       this.host
         .concat("/items/")
         .concat(id)
@@ -57,7 +54,7 @@ export default class OpenHabApiClient {
   }
 
   async getItemLog(id) {
-    return this.get(
+    return get(
       this.host
         .concat("/items/")
         .concat(id)
