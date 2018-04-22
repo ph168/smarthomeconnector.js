@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-const items = [
+export const items = [
   {
     name: "Bed Room",
     id: "33",
@@ -127,7 +126,7 @@ const items = [
   }
 ];
 
-const itemDetails = [
+export const itemDetails = [
   {
     name: "Bedroom Blind",
     id: "59",
