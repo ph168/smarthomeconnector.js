@@ -27,16 +27,16 @@ export default class OpenNetHomeAdapter extends BaseAdapter {
   }
 
   hasComponent() {
-    return this.items.length > 0 || this.getItems().length > 0;
+    return Promise.resolve(this.items.length > 0 || this.getItems().length > 0);
   }
   /* #FR1 (GET / ADD Component(s)) */
 
-  getComponent(id) {
+  async getComponent(id) {
     let item = this.items.find(x => x.id === id);
     if (item === null) {
-      item = this.client.getItem(id);
+      item = await this.client.getItem(id);
     }
-    return this.transform(item);
+    return Promise.resolve(this.transform(item));
   }
 
   transform(item) {
@@ -53,8 +53,10 @@ export default class OpenNetHomeAdapter extends BaseAdapter {
     return component;
   }
 
-  getComponents() {
-    this.loadData();
+  async getComponents() {
+    if (!this.items) {
+      await this.loadData();
+    }
     return Promise.resolve(this.items);
   }
 
