@@ -21,9 +21,11 @@ export default class OpenNetHomeAdapter extends BaseAdapter {
   async loadData() {
     const arr = await this.client.getItems();
     this.items = [];
-    arr.forEach(item => {
-      this.items.push(this.getItem(item.id).then(i => i));
-    });
+    return Promise.all(
+      arr.map(async item => {
+        this.items.push(await this.client.getItem(item.id));
+      })
+    );
   }
 
   hasComponent() {
@@ -32,6 +34,9 @@ export default class OpenNetHomeAdapter extends BaseAdapter {
   /* #FR1 (GET / ADD Component(s)) */
 
   async getComponent(id) {
+    if (!this.items) {
+      await this.loadData();
+    }
     let item = this.items.find(x => x.id === id);
     if (item === null) {
       item = await this.client.getItem(id);
@@ -46,7 +51,9 @@ export default class OpenNetHomeAdapter extends BaseAdapter {
       (item.className === undefined || item.className === null)
     ) {
       i = this.client.getItem(item.id);
-    } else i = item;
+    } else {
+      i = item;
+    }
     const component = new ShcComponent(i.id, i.name, i.category, i.className);
     component.attributes = i.attributes;
     component.services = i.actions;
