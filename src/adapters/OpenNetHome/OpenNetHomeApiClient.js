@@ -38,7 +38,7 @@ export default class OpenHabApiClient {
   }
 
   async createItem(item) {
-    return this.put(this.host.concat("/items/"), JSON.stringify(item));
+    return this.post(this.host.concat("/items"), JSON.stringify(item));
   }
 
   async deleteItem(id) {
@@ -52,7 +52,7 @@ export default class OpenHabApiClient {
         .concat(id)
         .concat("/actions/")
         .concat(action)
-        .concat("invoke")
+        .concat("/invoke")
     );
   }
 
