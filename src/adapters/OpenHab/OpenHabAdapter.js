@@ -47,6 +47,12 @@ export default class OpenHabAdapter extends BaseAdapter {
           item.state,
           item.label
         );
+
+        service.updateState = state => {
+          this.state = state;
+          return this.client.sendCommandToItem(item.name, state);
+        };
+
         services.push(service);
       });
     });
@@ -124,11 +130,7 @@ export default class OpenHabAdapter extends BaseAdapter {
 
   async getServices() {
     const components = await this.getComponents();
-    const services = [];
-    components.forEach(component => {
-      services.concat(component.services);
-    });
-    return Promise.all(services);
+    return Promise.resolve(components.map(component => component.services));
   }
 
   async getCategories() {

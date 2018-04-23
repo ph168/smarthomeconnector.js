@@ -9,6 +9,14 @@ function post(url, json) {
   return axios.post(url, json);
 }
 
+function postText(url, text) {
+  return axios.post(url, text, {
+    headers: {
+      "Content-Type": "text/plain"
+    }
+  });
+}
+
 function put(url, json) {
   return axios.put(url, json);
 }
@@ -94,7 +102,7 @@ export default class OpenHabApiClient {
   }
 
   async sendCommandToItem(name, command) {
-    return post(this.host.concat("/items/").concat(name), command);
+    return postText(this.host.concat("/items/").concat(name), command);
   }
 
   async getItemState(name) {

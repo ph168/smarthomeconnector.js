@@ -41,6 +41,18 @@ export class ShcService {
     this.state = state;
     this.description = description;
   }
+
+  /**
+   * Update the service's state.
+   * This can be overridden by the adapter to perform the actual update.
+   * @abstract
+   * @param state
+   * @return {Promise.<T>} resolves if the update was successful
+   */
+  updateState(state) {
+    this.state = state;
+    return Promise.resolve();
+  }
 }
 
 /**
