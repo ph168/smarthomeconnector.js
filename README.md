@@ -11,10 +11,14 @@
 
 SmartHomeConnector.js is a JavaScript library for connecting web applications to home automation systems. It abolishes the need to learn the speficifcs of each supported system by providing a uniform API on top.
 The library currently supports the following features;
-* ...
+* Retrieving and adding components
+* Retrieving component services
+* Changing component service state
+* Retrieving image data from camera components (openHAB only)
 
 Currently supporting;
 * [openHAB](https://www.openhab.org/)
+* [OpenNetHome](http://opennethome.org/)
 
 ## Installation
 
