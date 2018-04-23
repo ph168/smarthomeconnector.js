@@ -23,7 +23,7 @@ export default class OpenHabApiClient {
   }
 
   async getThings() {
-    return get(this.host, "/things");
+    return get(this.host.concat("/things/"));
   }
 
   async createThing(thing) {
@@ -117,7 +117,7 @@ export default class OpenHabApiClient {
   }
 
   async getBindings() {
-    return get(this.host.concat("/bindindgs"));
+    return get(this.host.concat("/bindings/"));
   }
 
   async getBindingConfig(bindingID) {
