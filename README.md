@@ -40,6 +40,8 @@ npm run build
 ## Usage
 * ...
 
+For a more details see our [documentation](https://github.com/ph168/smarthomeconnector.js/tree/master/docs/JSDoc).
+
 ## Questions, suggestions & feature requests
 
 [File an issue](https://github.com/ph168/smarthomeconnector.js/issues)!
