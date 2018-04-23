@@ -11,8 +11,11 @@ const connector = new SmartHomeConnector({
 });
 
 adapter.loadData().then(async () => {
+  // Find a component by name
   const lamp = await connector.getComponent("Schreibtischlampe");
   console.log(lamp);
 
-  // TODO modify state
+  // Find a service of the component and update its state
+  const brightness = lamp.services.find(s => s.description === "Brightness");
+  brightness.updateState(brightness.state === "0" ? "100" : "0");
 });
