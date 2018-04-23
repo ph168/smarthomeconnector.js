@@ -30,7 +30,6 @@ export class SmartHomeConnector {
       return await this.adapter.getComponents();
     } catch (e) {
       // TODO custom error
-      console.log(e);
       throw new Error("Cannot get components from adapter");
     }
   }
@@ -48,7 +47,6 @@ export class SmartHomeConnector {
       }
       return await this.adapter.getComponent(id);
     } catch (e) {
-      console.log(e);
       throw new Error("Cannot get component from adapter");
     }
   }
