@@ -80,7 +80,7 @@ export default class OpenNetHomeAdapter extends BaseAdapter {
     return services;
   }
   getComponentServices(component) {
-    return component.atributes;
+    return component.attributes;
   }
   /* #FR3 (GET / UPDATE service status (e.g. Switch ON/OFF)) */
   getStatus(item, service) {
