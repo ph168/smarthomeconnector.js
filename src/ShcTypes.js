@@ -5,9 +5,9 @@
  * ShcState: State of a Service (eg. ON/Off, 20db,...)
  */
 
- /**
-  * A single piece of hardware or software that is managed by the home automation system
-  */
+/**
+ * A single piece of hardware or software that is managed by the home automation system
+ */
 export class ShcComponent {
   /**
    * @class Create a Component

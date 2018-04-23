@@ -7,8 +7,8 @@ import OpenNetHomeAdapter from "./adapters/OpenNetHome/OpenNetHomeAdapter";
 
 export { OpenHabAdapter, OpenNetHomeAdapter };
 
-/** 
- * Class representing the SmartHomeConnector itself 
+/**
+ * Class representing the SmartHomeConnector itself
  * It joins all parts needed to connect to and use the home automation system
  */
 export class SmartHomeConnector {
@@ -36,7 +36,7 @@ export class SmartHomeConnector {
   }
 
   /**
-   * Returns a Component of the Adapter with a given id 
+   * Returns a Component of the Adapter with a given id
    * @param {string} id Id of a certain Component
    * @return {Promise} If a Component with the given id exists the Component, else a rejected Promise
    */
