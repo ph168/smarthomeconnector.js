@@ -1,4 +1,4 @@
-import SmartHomeConnector from "../src/index";
+import { SmartHomeConnector } from "../src/index";
 import BaseAdapter from "../src/BaseAdapter";
 
 /* eslint-disable class-methods-use-this */

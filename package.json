@@ -2,7 +2,7 @@
   "name": "smarthomeconnector",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/smarthomeconnector.js",
+  "main": "dist/SmartHomeConnector.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint src/**/*.js test/**/*.js",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",

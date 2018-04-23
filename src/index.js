@@ -1,4 +1,9 @@
-export default class SmartHomeConnector {
+import OpenHabAdapter from "./adapters/OpenHab/OpenHabAdapter";
+import OpenNetHomeAdapter from "./adapters/OpenNetHome/OpenNetHomeAdapter";
+
+export { OpenHabAdapter, OpenNetHomeAdapter };
+
+export class SmartHomeConnector {
   constructor({ adapter }) {
     this.adapter = adapter;
     // TODO options for connecting the adapter
@@ -9,6 +14,7 @@ export default class SmartHomeConnector {
       return await this.adapter.getComponents();
     } catch (e) {
       // TODO custom error
+      console.log(e);
       throw new Error("Cannot get components from adapter");
     }
   }
@@ -21,6 +27,7 @@ export default class SmartHomeConnector {
       }
       return await this.adapter.getComponent(id);
     } catch (e) {
+      console.log(e);
       throw new Error("Cannot get component from adapter");
     }
   }
