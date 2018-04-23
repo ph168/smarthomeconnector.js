@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>SmartHomeConnector OpenHab Example</title>
+</head>
+<body>
+<!-- copy SmartHomeConnector.js from dist/ -->
+<script src="./SmartHomeConnector.js"></script>
+<script>
+  (() => {
+    const SmartHomeConnector = window.SmartHomeConnector.SmartHomeConnector;
+    const OpenHabAdapter = window.SmartHomeConnector.OpenHabAdapter;
+
+    const adapter = new OpenHabAdapter("http://localhost:8080/rest", true);
+    const connector = new SmartHomeConnector({
+      adapter
+    });
+
+    adapter.loadData().then(() => {
+      return connector.getComponent("Schreibtischlampe");
+    }).then(lamp => {
+      const brightness = lamp.services.find(s => s.description === "Brightness");
+      brightness.updateState(brightness.state === "0" ? "100" : "0");
+    });
+  })();
+</script>
+</body>
+</html>
