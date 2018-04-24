@@ -23,6 +23,10 @@ Currently supporting;
 * [openHAB](https://www.openhab.org/)
 * [OpenNetHome](http://opennethome.org/)
 
+### Demo
+
+![Demo](https://media.giphy.com/media/3gL2xfbPucdiRr0JJk/giphy.gif)
+
 ## Installation
 
 ### Using npm
