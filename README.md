@@ -1,5 +1,6 @@
 # SmartHomeConnector.js
 
+[![npm](https://img.shields.io/npm/v/smarthomeconnector.svg)](https://www.npmjs.com/package/smarthomeconnector)
 [![CircleCI](https://circleci.com/gh/ph168/smarthomeconnector.js.svg?style=shield)](https://circleci.com/gh/ph168/smarthomeconnector.js)
 [![CodeFactor](https://www.codefactor.io/repository/github/ph168/smarthomeconnector.js/badge)](https://www.codefactor.io/repository/github/ph168/smarthomeconnector.js)
 [![Dependencies](https://david-dm.org/ph168/smarthomeconnector.js/status.svg)](https://david-dm.org/ph168/smarthomeconnector.js)
@@ -27,14 +28,14 @@ Currently supporting;
 ### Using npm
 
 ```
-npm install smarthomeconnector.js
+npm install smarthomeconnector
 ```
-
-**TODO**: npm package must be published first
 
 ### Using CDN
 
-**TODO**: publish, add example script tag
+```
+<script src="https://unpkg.com/smarthomeconnector@1.0.0/dist/SmartHomeConnector.js"></script>
+```
 
 ### Manually
 
