@@ -33,9 +33,9 @@
  * ShcState: State of a Service (eg. ON/Off, 20db,...)
  */
 
- /**
-  * A single piece of hardware or software that is managed by the home automation system
-  */
+/**
+ * A single piece of hardware or software that is managed by the home automation system
+ */
 export class ShcComponent {
   /**
    * @class Create a Component
@@ -68,6 +68,18 @@ export class ShcService {
     this.type = type;
     this.state = state;
     this.description = description;
+  }
+
+  /**
+   * Update the service's state.
+   * This can be overridden by the adapter to perform the actual update.
+   * @abstract
+   * @param state
+   * @return {Promise.&lt;T>} resolves if the update was successful
+   */
+  updateState(state) {
+    this.state = state;
+    return Promise.resolve();
   }
 }
 

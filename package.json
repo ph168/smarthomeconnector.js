@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src/**/*.js test/**/*.js",
-    "build": "webpack"
+    "build": "webpack",
+	"jsdoc": "JSDoc src -d ./docs/jsdoc"
   },
   "author": "Peter Hoffmann",
   "license": "MIT",
@@ -26,6 +27,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.15.0-rc.13",
     "jest": "^22.4.2",
+	"jsdoc": "^3.5.5",
     "lint-staged": "^7.0.2",
     "moxios": "^0.4.0",
     "prettier": "1.11.1",
