@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+/**
+ * @file File that contains functions for OpenNetHome REST calls
+ */
 const axios = require("axios");
 
 function get(url) {

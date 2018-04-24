@@ -4,8 +4,7 @@
 /**
  * @file File that contains the definition for BaseAdapter
  */
-
-import { ShcService, ShcComponent } from "./ShcTypes";
+import { ShcService, ShcComponent, ShcState } from "./ShcTypes";
 
 /**
  * @name BaseAdapter
@@ -17,26 +16,27 @@ export default class BaseAdapter {
   /**
    * Transforms a home automation system specific component into a Component
    * @param thing Component in context of a certain home automation system
-   * @return thing transformed into a Component
+   * @return {Promise<ShcComponent>} thing transformed into a Component
    *
    * @memberof BaseAdapter
    * @instance
    */
   transform(thing) {}
   /**
-   * Checks if the Adapter contains Components
-   * @return {boolean} true if the Adapter contains Components
+   * Checks if the Adapter contains a Component with a given name or id
+   * @param {*} name name or id of the Component
+   * @return {Promise<boolean>} true if the Adapter contains Component
    *
    * @memberof BaseAdapter
    * @instance
    */
-  hasComponent() {}
+  hasComponent(name) {}
 
   /* #FR1 (GET / ADD Component(s)) */
   /**
    * Returns a Component of the Adapter with a given name or id
-   * @param name Name or id of a certain Component
-   * @return If a Component with the given id exists the Component, else some form of rejection
+   * @param {string} name Name or id of a certain Component
+   * @return {Promise<ShcComponent>|Promise<boolean>} If a Component with the given id exists the Component, else some form of rejection
    *
    * @memberof BaseAdapter
    * @instance
@@ -44,7 +44,7 @@ export default class BaseAdapter {
   getComponent(name) {}
   /**
    * Returns all Components of the Adapter
-   * @return All Components of the Adapter
+   * @return {Promise<ShcComponent[]>} All Components of the Adapter
    *
    * @memberof BaseAdapter
    * @instance
@@ -54,7 +54,7 @@ export default class BaseAdapter {
   /* #FR2 (GET / provided Component Services (=functions)) */
   /**
    * Returns all Services of the Adapter
-   * @return All Services of the Adapter
+   * @return {Promise<ShcService[]>} All Services of the Adapter
    *
    * @memberof BaseAdapter
    * @instance
@@ -63,7 +63,7 @@ export default class BaseAdapter {
   /**
    * Returns all Services of a given Component
    * @param {ShcComponent} component
-   * @return All Services of the given component
+   * @return {ShcService[]} All Services of the given component
    *
    * @memberof BaseAdapter
    * @instance
@@ -74,11 +74,13 @@ export default class BaseAdapter {
   /**
    * Returns the status of a given Service
    * @param {ShcService} service
+   * @returns {ShcState} Status of the given Service
    *
    * @memberof BaseAdapter
    * @instance
    */
   getStatus(service) {}
+
   /**
    * Updates the status of a given Service
    * @param {ShcService} service

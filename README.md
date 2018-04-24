@@ -68,7 +68,7 @@ npm run build
 
 See [examples](https://github.com/ph168/smarthomeconnector.js/tree/master/examples).
 
-For more details see our [documentation](https://github.com/ph168/smarthomeconnector.js/tree/master/docs/JSDoc).
+For more details see our [documentation](http://mprah.at/smarthomeconnector/) (also found in docs/JSDoc).
 
 ## Questions, suggestions & feature requests
 

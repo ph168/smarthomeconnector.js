@@ -1,5 +1,5 @@
 /**
- * OpenHab REST API Types
+ * @file File that contains all OpenHab REST API Types
  */
 export interface ThingType {
   UID: string;

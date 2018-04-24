@@ -1,7 +1,6 @@
 /**
  * @file main-File that contains the definition for SmartHomeConnector
  */
-
 import OpenHabAdapter from "./adapters/OpenHab/OpenHabAdapter";
 import OpenNetHomeAdapter from "./adapters/OpenNetHome/OpenNetHomeAdapter";
 

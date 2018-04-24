@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: BaseAdapter</title>
+    <title>JSDoc: Class: OpenNetHomeAdapter</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: BaseAdapter</h1>
+    <h1 class="page-title">Class: OpenNetHomeAdapter</h1>
 
     
 
@@ -28,9 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>BaseAdapter<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>OpenNetHomeAdapter<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class representing the BaseAdapter itselfIt is the base class for all Adapters and contains all functions used and/or needed by SmartHomeConnector</div>
+            <div class="class-description">Class representing the Adapter for OpenNetHome</div>
         
     
 </header>
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="BaseAdapter"><span class="type-signature"></span>new BaseAdapter<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="OpenNetHomeAdapter"><span class="type-signature"></span>new OpenNetHomeAdapter<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line9">line 9</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -147,7 +147,7 @@
     
 
     
-    <h4 class="name" id="getCameraImage"><span class="type-signature"></span>getCameraImage<span class="signature">(camera)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getCameraImage"><span class="type-signature"></span>getCameraImage<span class="signature">(camera)</span><span class="type-signature"> &rarr; {Error}</span></h4>
     
 
     
@@ -155,7 +155,7 @@
 
 
 <div class="description">
-    Returns the image of a given camera
+    Returns the image of a given camera (not supported by OpenNetHome)
 </div>
 
 
@@ -243,7 +243,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line102">line 102</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line182">line 182</a>
     </li></ul></dd>
     
 
@@ -270,11 +270,23 @@
 
         
 <div class="param-desc">
-    Image of the given camera
+    Unsupported method
 </div>
 <br/><br/>
 
 
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Error</span>
+
+
+    </dd>
+</dl>
 
     
 
@@ -288,7 +300,7 @@
     
 
     
-    <h4 class="name" id="getComponent"><span class="type-signature"></span>getComponent<span class="signature">(name)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ShcComponent.html">ShcComponent</a>>|Promise.&lt;boolean>}</span></h4>
+    <h4 class="name" id="getComponent"><span class="type-signature">(async) </span>getComponent<span class="signature">(id)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ShcComponent.html">ShcComponent</a>>|Promise.&lt;boolean>}</span></h4>
     
 
     
@@ -296,7 +308,7 @@
 
 
 <div class="description">
-    Returns a Component of the Adapter with a given name or id
+    Returns a Component of the Adapter with a given  id
 </div>
 
 
@@ -332,7 +344,7 @@
 
         <tr>
             
-                <td class="name"><code>name</code></td>
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
@@ -348,7 +360,7 @@
 
             
 
-            <td class="description last">Name or id of a certain Component</td>
+            <td class="description last">Name of a the Component</td>
         </tr>
 
     
@@ -389,7 +401,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line44">line 44</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line65">line 65</a>
     </li></ul></dd>
     
 
@@ -416,7 +428,7 @@
 
         
 <div class="param-desc">
-    If a Component with the given id exists the Component, else some form of rejection
+    If a Component with the given id exists the Component, else false
 </div>
 <br/><br/>
 
@@ -449,7 +461,7 @@
     
 
     
-    <h4 class="name" id="getComponents"><span class="type-signature"></span>getComponents<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="ShcComponent.html">ShcComponent</a>>>}</span></h4>
+    <h4 class="name" id="getComponents"><span class="type-signature">(async) </span>getComponents<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="ShcComponent.html">ShcComponent</a>>>}</span></h4>
     
 
     
@@ -501,7 +513,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line52">line 52</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line107">line 107</a>
     </li></ul></dd>
     
 
@@ -527,11 +539,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    All Components of the Adapter
-</div>
-<br/><br/>
-
 
 
 <dl>
@@ -659,7 +666,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line71">line 71</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line145">line 145</a>
     </li></ul></dd>
     
 
@@ -768,7 +775,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line62">line 62</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line125">line 125</a>
     </li></ul></dd>
     
 
@@ -825,7 +832,7 @@
     
 
     
-    <h4 class="name" id="getStatus"><span class="type-signature"></span>getStatus<span class="signature">(service)</span><span class="type-signature"> &rarr; {<a href="ShcState.html">ShcState</a>}</span></h4>
+    <h4 class="name" id="getStatus"><span class="type-signature"></span>getStatus<span class="signature">(item, service)</span><span class="type-signature"> &rarr; {<a href="ShcState.html">ShcState</a>}</span></h4>
     
 
     
@@ -865,6 +872,29 @@
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Item</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
     
 
         <tr>
@@ -926,7 +956,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line82">line 82</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line158">line 158</a>
     </li></ul></dd>
     
 
@@ -983,7 +1013,7 @@
     
 
     
-    <h4 class="name" id="hasComponent"><span class="type-signature"></span>hasComponent<span class="signature">(name)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span></h4>
+    <h4 class="name" id="hasComponent"><span class="type-signature"></span>hasComponent<span class="signature">(id)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span></h4>
     
 
     
@@ -991,7 +1021,7 @@
 
 
 <div class="description">
-    Checks if the Adapter contains a Component with a given name or id
+    Checks if the Adapter contains a Component with a given id
 </div>
 
 
@@ -1027,13 +1057,13 @@
 
         <tr>
             
-                <td class="name"><code>name</code></td>
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">*</span>
+<span class="param-type">string</span>
 
 
             
@@ -1043,7 +1073,7 @@
 
             
 
-            <td class="description last">name or id of the Component</td>
+            <td class="description last">id of the Component</td>
         </tr>
 
     
@@ -1084,7 +1114,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line33">line 33</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -1141,7 +1171,7 @@
     
 
     
-    <h4 class="name" id="transform"><span class="type-signature"></span>transform<span class="signature">(thing)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ShcComponent.html">ShcComponent</a>>}</span></h4>
+    <h4 class="name" id="loadData"><span class="type-signature">(async) </span>loadData<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -1149,7 +1179,93 @@
 
 
 <div class="description">
-    Transforms a home automation system specific component into a Component
+    Loads items for the Adapter
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="transform"><span class="type-signature"></span>transform<span class="signature">(item)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ShcComponent.html">ShcComponent</a>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Transforms an Item into a Component
 </div>
 
 
@@ -1185,10 +1301,15 @@
 
         <tr>
             
-                <td class="name"><code>thing</code></td>
+                <td class="name"><code>item</code></td>
             
 
             <td class="type">
+            
+                
+<span class="param-type">Item</span>
+
+
             
             </td>
 
@@ -1196,7 +1317,7 @@
 
             
 
-            <td class="description last">Component in context of a certain home automation system</td>
+            <td class="description last">Component in context of OpenNetHome</td>
         </tr>
 
     
@@ -1237,7 +1358,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line24">line 24</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line84">line 84</a>
     </li></ul></dd>
     
 
@@ -1264,7 +1385,7 @@
 
         
 <div class="param-desc">
-    thing transformed into a Component
+    Item transformed into a Component
 </div>
 <br/><br/>
 
@@ -1294,7 +1415,7 @@
     
 
     
-    <h4 class="name" id="updateStatus"><span class="type-signature"></span>updateStatus<span class="signature">(service)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="updateStatus"><span class="type-signature"></span>updateStatus<span class="signature">(item, service)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1334,6 +1455,29 @@
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Item</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
     
 
         <tr>
@@ -1395,7 +1539,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="BaseAdapter.js.html">BaseAdapter.js</a>, <a href="BaseAdapter.js.html#line91">line 91</a>
+        <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html">adapters/OpenNetHome/OpenNetHomeAdapter.js</a>, <a href="adapters_OpenNetHome_OpenNetHomeAdapter.js.html#line170">line 170</a>
     </li></ul></dd>
     
 

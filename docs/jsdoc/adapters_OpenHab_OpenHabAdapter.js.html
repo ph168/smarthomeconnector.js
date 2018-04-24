@@ -1,4 +1,32 @@
-/* eslint-disable class-methods-use-this */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: adapters/OpenHab/OpenHabAdapter.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: adapters/OpenHab/OpenHabAdapter.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable class-methods-use-this */
 /* eslint-disable no-unused-vars */
 
 /**
@@ -28,7 +56,7 @@ export default class OpenHabAdapter extends BaseAdapter {
 
   /**
    * Loads OpenHab data (items, things, thingTypes, bindings)
-   *
+   * 
    * @memberof OpenHabAdapter
    * @instance
    */
@@ -41,8 +69,8 @@ export default class OpenHabAdapter extends BaseAdapter {
 
   /**
    * Returns all Components of the Adapter
-   * @return {Promise<ShcComponent[]>}
-   *
+   * @return {Promise&lt;ShcComponent[]>}
+   * 
    * @memberof OpenHabAdapter
    * @instance
    */
@@ -59,7 +87,7 @@ export default class OpenHabAdapter extends BaseAdapter {
    * Returns all Services of given Channels
    * @param {Channel[]} channel
    * @return {ShcService[]} All Services of the given Channels
-   *
+   * 
    * @memberof OpenHabAdapter
    * @instance
    */
@@ -91,8 +119,8 @@ export default class OpenHabAdapter extends BaseAdapter {
   /**
    * Checks if the Adapter contains a Component with a given name or id
    * @param {string} name name of the Component
-   * @return {Promise<boolean>} true if the Adapter contains Component
-   *
+   * @return {Promise&lt;boolean>} true if the Adapter contains Component
+   * 
    * @memberof OpenHabAdapter
    * @instance
    */
@@ -105,13 +133,13 @@ export default class OpenHabAdapter extends BaseAdapter {
   /**
    * Transforms a Thing into a Component
    * @param {Thing} thing Component in context of OpenHab
-   * @return {Promise<ShcComponent>} Thing transformed into a Component
+   * @return {Promise&lt;ShcComponent>} Thing transformed into a Component
    *
    * @memberof OpenHabAdapter
    * @instance
    */
   transform(thing) {
-    // OpenHab.ThingType describes each OpenHab.Thing -> category & description
+    // OpenHab.ThingType describes each OpenHab.Thing -> category &amp; description
     const thingType = this.thingTypes.find(
       type => type.UID === thing.thingTypeUID
     );
@@ -137,7 +165,7 @@ export default class OpenHabAdapter extends BaseAdapter {
    * Returns Configuration of a Thing
    * @param {Thing} thing
    * @return {Configuration} Configuration of given Thing
-   *
+   * 
    * @memberof OpenHabAdapter
    * @instance
    */
@@ -148,8 +176,8 @@ export default class OpenHabAdapter extends BaseAdapter {
   /**
    * Returns image of a given camera
    * @param {string} name Name of the camera
-   * @return {Promise<*>} Image of the camera
-   *
+   * @return {Promise&lt;*>} Image of the camera
+   * 
    * @memberof OpenHabAdapter
    * @instance
    */
@@ -186,8 +214,8 @@ export default class OpenHabAdapter extends BaseAdapter {
   /**
    * Returns a Component of the Adapter with a given name or id
    * @param {string} name Name of a the Component
-   * @return {Promise<ShcComponent>|Promise<boolean>} If a Component with the given name exists the Component, else false
-   *
+   * @return {Promise&lt;ShcComponent>|Promise&lt;boolean>} If a Component with the given name exists the Component, else false
+   * 
    * @memberof OpenHabAdapter
    * @instance
    */
@@ -200,8 +228,8 @@ export default class OpenHabAdapter extends BaseAdapter {
 
   /**
    * Returns all Services of the Adapter
-   * @return {Promise<ShcService[]>} All Services of the Adapter
-   *
+   * @return {Promise&lt;ShcService[]>} All Services of the Adapter
+   * 
    * @memberof OpenHabAdapter
    * @instance
    */
@@ -213,7 +241,7 @@ export default class OpenHabAdapter extends BaseAdapter {
   /**
    * Returns all possible thingTypes
    * @return {ThingType[]} All possible thingTypes
-   *
+   * 
    * @memberof OpenHabAdapter
    * @instance
    */
@@ -225,3 +253,26 @@ export default class OpenHabAdapter extends BaseAdapter {
     );
   }
 }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BaseAdapter.html">BaseAdapter</a></li><li><a href="OpenHabAdapter.html">OpenHabAdapter</a></li><li><a href="OpenNetHomeAdapter.html">OpenNetHomeAdapter</a></li><li><a href="ShcComponent.html">ShcComponent</a></li><li><a href="ShcService.html">ShcService</a></li><li><a href="ShcState.html">ShcState</a></li><li><a href="SmartHomeConnector.html">SmartHomeConnector</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> 
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,3 +1,6 @@
+/**
+ * @file File that contains all OpenNetHome REST API Types
+ */
 export interface Item {
   id: number;
   name: string;

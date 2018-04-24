@@ -7,7 +7,7 @@
     "test": "jest",
     "lint": "eslint src/**/*.js test/**/*.js",
     "build": "webpack",
-	"jsdoc": "JSDoc src -d ./docs/jsdoc"
+	"jsdoc": "JSDoc src -d ./docs/jsdoc -r"
   },
   "author": "Peter Hoffmann",
   "license": "MIT",
