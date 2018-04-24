@@ -32,9 +32,14 @@
     });
 
     adapter.loadData().then(() => {
-      return connector.getComponent("Schreibtischlampe");
+      //  enter the name of the lamp (openHAB:thing) here 
+      return connector.getComponent("Schreibtischlampe"); 
     }).then(lamp => {
 
+      /* 
+        enter the name of the service (openHAB:item) assigned to the lamp; 
+        service must have a state of type Dimmer for this demo
+      */
       const brightness = lamp.services.find(s => s.description === "Brightness");
 
       let isOn = brightness.state !== "0";
@@ -59,7 +64,10 @@
         });
       });
 
-    });
+    })
+    .catch((error) => {
+      alert(error);
+    })
   })();
 </script>
 </body>
