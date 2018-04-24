@@ -1,10 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>SmartHomeConnector OpenHab Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
 </head>
 <body>
-<!-- copy SmartHomeConnector.js from dist/ -->
-<script src="./SmartHomeConnector.js"></script>
+
+<section class="section">
+    <div class="container">
+        <h1 class="title">SmartHomeConnector.js Example</h1>
+        <p class="subtitle">
+            Using the <strong>OpenHab</strong> Adapter
+        </p>
+        <div class="notification is-invisible" id="notification">
+            The light is switched <strong id="notification-state">(?)</strong>
+        </div>
+        <a class="button" id="button">Switch</a>
+    </div>
+</section>
+
+<script src="https://unpkg.com/smarthomeconnector@1.0.0/dist/SmartHomeConnector.js"></script>
 <script>
   (() => {
     const SmartHomeConnector = window.SmartHomeConnector.SmartHomeConnector;
@@ -18,8 +34,31 @@
     adapter.loadData().then(() => {
       return connector.getComponent("Schreibtischlampe");
     }).then(lamp => {
+
       const brightness = lamp.services.find(s => s.description === "Brightness");
-      brightness.updateState(brightness.state === "0" ? "100" : "0");
+
+      let isOn = brightness.state !== "0";
+      const button = document.querySelector('#button');
+      const notification = document.querySelector('#notification');
+      const notificationState = document.querySelector('#notification-state');
+
+      notification.classList.remove('is-invisible');
+
+      const updateView = () => {
+        button.innerText = isOn ? "Switch Off" : "Switch On";
+        button.classList.toggle("is-primary", !isOn);
+        notificationState.innerText = isOn ? "on" : "off";
+        notification.classList.toggle("is-primary", isOn);
+      };
+      updateView();
+
+      button.addEventListener('click', () => {
+        brightness.updateState(isOn ? "0" : "100").then(() => {
+          isOn = !isOn;
+          updateView();
+        });
+      });
+
     });
   })();
 </script>
